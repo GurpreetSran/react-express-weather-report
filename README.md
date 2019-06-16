@@ -3,12 +3,12 @@ React express based application for generating weather reports.
 
 This application is based on create react app. Express server has been added to massage the data and hide API keys. This should help to keep Front End application clean. 
 
-Lates react hooks has been used instead tradition classes.
+Latest react hooks has been used instead tradition classes.
 
 Dev mode commands to get you started 
 ```sh
 $ git clone
-$ cd eact-express-weather-report
+$ cd react-express-weather-report
 $ npm install
 $ cd client 
 $ npm install
