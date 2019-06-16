@@ -34,3 +34,7 @@ $ npm test
 ```
 # Live demo
 https://express-react-weather.herokuapp.com/
+
+
+![Screenshot](desktop.png)
+![Screenshot](mobile.png)
