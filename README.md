@@ -26,3 +26,13 @@ User can also change theme (dark/light) which is stored in localstorage.
 
 # Live Link
 https://express-react-weather.herokuapp.com/
+
+
+# Functionality
+Application uses jest and enzyme in order to unit test code. Some basic tests have been added. 
+
+```sh
+$ cd client 
+$ npm test
+
+```
