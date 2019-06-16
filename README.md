@@ -6,3 +6,5 @@ This application is based on create react app. Express server will be added to m
 Intention will be on using hooks instead classes. 
 
 Run app in dev mode: 'npm run dev'. Note this will run two application together, FE and BE. 
+
+Note: you might need to install nodemon globally. 'npm install -g nodemon'
