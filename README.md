@@ -25,7 +25,6 @@ This app gets weather information for next five days of given city in UK.
 User can also change theme (dark/light) which is stored in localstorage.
 
 London is displayed by default. User can enter name of any city in UK and press enter to get weather details.
-Note: There is no error handling, search will not work if the city name is invalid.
 
 # Unit tests
 Application uses jest and enzyme in order to unit test code. Some basic tests have been added. 
@@ -39,7 +38,9 @@ $ npm test
 https://express-react-weather.herokuapp.com/
 
 
-
+# Limitations
+There is no error handling, search will not work if the city name is invalid.
+No checks for duplicate city names.
 
 ![Screenshot](desktop-dark.png)
 ![Screenshot](mobile-dark.png)
