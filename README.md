@@ -8,3 +8,10 @@ Intention will be on using hooks instead classes.
 Runing instructions app in dev mode: 
 'npm i' in root also 'npm i' in client folder and then 'npm run dev'. 
 Note this will run two application together, FE and BE. 
+
+
+# react-express-weather-report
+
+This app gets weather information for next five days of given city in UK.
+User can also change theme (dark/light) which is stored in localstorage.
+
