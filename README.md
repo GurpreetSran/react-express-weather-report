@@ -5,7 +5,7 @@ This application is based on create react app. Express server has been added to 
 
 Lates react hooks has been used instead tradition classes.
 
-Runing instructions app in dev mode: 
+Dev mode commands to get you started 
 ```sh
 $ git clone
 $ cd eact-express-weather-report
