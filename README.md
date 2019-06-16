@@ -36,5 +36,9 @@ $ npm test
 https://express-react-weather.herokuapp.com/
 
 
-![Screenshot](desktop.png)
-![Screenshot](mobile.png)
+
+
+![Screenshot](desktop-dark.png)
+![Screenshot](mobile-dark.png)
+![Screenshot](desktop-light.png)
+![Screenshot](mobile-light.png)
