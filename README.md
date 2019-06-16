@@ -6,8 +6,17 @@ This application is based on create react app. Express server has been added to 
 Lates react hooks has been used instead tradition classes.
 
 Runing instructions app in dev mode: 
-'npm i' in root also 'npm i' in client folder and then 'npm run dev'. 
-Note this will run two application together, FE and BE. 
+```sh
+$ git clone
+$ cd eact-express-weather-report
+$ npm install
+$ cd client 
+$ npm install
+$ cd ..
+$ npm run dev
+
+```
+Note this will run two applications together, webpack dev server and node.js server. 
 
 
 # Functionality
