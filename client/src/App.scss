@@ -1,0 +1,31 @@
+// Two column layout
+
+.row {
+    display: flex;
+}
+  
+.column {
+    &:first-child {
+        flex: 70%;
+        @media only screen and (max-width: 700px) { 
+            flex: 100%;
+        }
+    }
+    
+    &:last-child {
+        flex: 30%;
+        @media only screen and (max-width: 700px) { 
+            flex: 0%;
+            display: none;
+        }
+    }
+
+    .appDescription {
+        font-size: 40px;
+        padding: 0 30px 0 30px;
+
+        > p {
+            padding-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+// Global styles and theme 
+
+@font-face {
+    font-family: plom;
+    src: url(./fonts/PlomPraeng.ttf);
+}
+
+$night-theme-bg-color: #000;
+$night-theme-font-color: #FFF;
+
+$day-theme-bg-color: #FFF;
+$day-theme-font-color: #000;
+
+$min-width: 480px;
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: plom;
+}
+
+#root {
+    width: 100%;
+}
+
+.night, .day {
+    min-height: 100vh;
+    min-width: $min-width;
+    background-color: $day-theme-bg-color;
+    color: $day-theme-font-color;
+    padding: 10px;
+    transition: 1s linear all;
+}
+
+.night {
+    background-color: $night-theme-bg-color;
+    color: $night-theme-font-color;
+}
