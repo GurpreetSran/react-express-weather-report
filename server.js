@@ -32,7 +32,6 @@ app.post('/api/weather', (req, res) => {
 // Group by date 
 const groupByDate = (xs, key) => {
   return xs.reduce(function(rv, x) {
-    debugger;
     (rv[x[key].slice(0, 10)] = rv[x[key].slice(0, 10)] || []).push(x);
     return rv;
   }, {});

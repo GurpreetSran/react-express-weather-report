@@ -8,5 +8,3 @@ Intention will be on using hooks instead classes.
 Runing instructions app in dev mode: 
 'npm i' in root also 'npm i' in client folder and then 'npm run dev'. 
 Note this will run two application together, FE and BE. 
-
-Note: you might need to install nodemon globally. 'npm install -g nodemon'.
