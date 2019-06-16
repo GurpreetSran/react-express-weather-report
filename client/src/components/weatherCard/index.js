@@ -1,5 +1,6 @@
 import * as React from 'react';
 import uuid from 'uuid';
+import './index.scss';
 
 const WeatherCard = (props) => {
     const {nextFiveDays, name, current } = props; 

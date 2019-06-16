@@ -7,6 +7,8 @@ import Form from './components/form/index';
 import { toggleTheme as toggleThemeAction } from './redux/actions/index';
 import uuid from 'uuid';
 
+import './App.scss';
+
 const App = () => {
   const theme = useSelector(state => state.theme.current);
   const weather = useSelector(state => state.weather.weather);
