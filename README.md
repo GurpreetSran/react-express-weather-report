@@ -1,4 +1,4 @@
-# react-express-weather-report
+# How to run locally 
 React express based application for generating weather reports.
 
 This application is based on create react app. Express server will be added to massage the data and hide API keys. This should help to keep Front End application clean. 
@@ -10,7 +10,7 @@ Runing instructions app in dev mode:
 Note this will run two application together, FE and BE. 
 
 
-# react-express-weather-report
+# Functionality
 
 This app gets weather information for next five days of given city in UK.
 User can also change theme (dark/light) which is stored in localstorage.
