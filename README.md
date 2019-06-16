@@ -24,10 +24,6 @@ Note this will run two applications together, webpack dev server and node.js ser
 This app gets weather information for next five days of given city in UK.
 User can also change theme (dark/light) which is stored in localstorage.
 
-# Live Link
-https://express-react-weather.herokuapp.com/
-
-
 # Unit tests
 Application uses jest and enzyme in order to unit test code. Some basic tests have been added. 
 
@@ -36,3 +32,5 @@ $ cd client
 $ npm test
 
 ```
+# Live demo
+https://express-react-weather.herokuapp.com/
