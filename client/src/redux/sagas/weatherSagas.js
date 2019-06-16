@@ -10,8 +10,13 @@ function getWeather(city = 'London') {
 }
 
 function * addNewCity({city}) {
-    const weatherData = yield call(getWeather, city);
-    yield put(fetchCityData(weatherData.data));
+    try {
+        const weatherData = yield call(getWeather, city);
+        yield put(fetchCityData(weatherData.data));
+    } catch(err) {
+        console.log(err);
+        // todo: display to user 
+    }
 };
 
 function * weatherSaga() {

@@ -26,7 +26,8 @@ app.post('/api/weather', (req, res) => {
   axios.all([getNextFiveDays(), getCurrentData()])
     .then(axios.spread(function (result, currentWeather) {
       res.json(mapRequiredProps(result, currentWeather));
-    }));
+    }))
+    .catch(error => res.status(500).send(error));
 });
 
 
