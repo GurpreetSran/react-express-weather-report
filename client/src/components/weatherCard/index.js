@@ -23,11 +23,11 @@ const WeatherCard = (props) => {
                             <span className="dayName">{day.date}</span>
                             <div>
                                 <span>Max: </span>
-                                <span>{day.tempMax}</span>
+                                <span>{Math.round(day.tempMax)}</span>
                             </div>
                             <div>
                                 <span>Min: </span>
-                                <span>{day.tempMin}</span>
+                                <span>{Math.round(day.tempMin)}</span>
                             </div>
                         </div>
                     )

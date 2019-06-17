@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setTheme, addCity } from './redux/actions';
 import ToggleButton from './components/toggleButton/index';
 import Form from './components/form/index';
-import { toggleTheme as toggleThemeAction } from './redux/actions/index';
 import uuid from 'uuid';
 
 import './App.scss';
@@ -16,6 +15,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    // if no theme then try to get it from localstorage or initial load
     dispatch(setTheme());
     dispatch(addCity('London'));
   }, [dispatch]);
@@ -31,7 +31,8 @@ const App = () => {
   }
 
   const toggleTheme = () => {
-    dispatch(toggleThemeAction(theme));
+    const toggled = theme === 'day' ? 'night' : 'day';
+    dispatch(setTheme(toggled));
   }
 
   return(

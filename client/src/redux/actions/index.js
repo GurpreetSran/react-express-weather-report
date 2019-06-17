@@ -1,6 +1,5 @@
 import { 
     SET_THEME, 
-    TOGGLE_THEME, 
     UPDATE_THEME,
     ADD_CITY,
     FETCH_CITY_DATA
@@ -13,12 +12,7 @@ export const setTheme = (theme) => ({
     theme 
 });
 
-// On button press
-export const toggleTheme  = () => ({
-    type: TOGGLE_THEME
-});
-
-// from sagas 
+// saga worker
 export const updateTheme = (theme) => ({
     type: UPDATE_THEME,
     theme
@@ -31,6 +25,7 @@ export const addCity = (city) => ({
     city
 });
 
+// saga worker
 export const fetchCityData = (payload) => ({
     type: FETCH_CITY_DATA,
     payload

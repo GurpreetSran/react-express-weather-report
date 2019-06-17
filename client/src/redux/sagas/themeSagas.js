@@ -1,22 +1,26 @@
-import { takeLatest, put, } from 'redux-saga/effects';
-import { SET_THEME, TOGGLE_THEME} from '../actions/types';
+import { takeLatest, put, select } from 'redux-saga/effects';
+import { SET_THEME } from '../actions/types';
 import { updateTheme } from '../actions/index';
 
-function * setTheme(action) {
-    const theme = localStorage.getItem('theme') || action.theme;
-    yield put(updateTheme(theme));
-    yield localStorage.setItem('theme', theme);
-}
+const defaultTheme = (state) => state.theme.current;
 
-function * updateLocalStorage() {
-    let theme = localStorage.getItem('theme');
-    theme = theme === 'day' ? 'night' : 'day';
+function * setTheme(action) {
+    const currentThemeFromState = yield select(defaultTheme);
+    
+    let theme;
+
+    if (!action.theme) {
+        theme =  localStorage.getItem('theme') || currentThemeFromState;
+    }
+
+    theme = action.theme || theme;
+
+    yield put(updateTheme(theme));
     yield localStorage.setItem('theme', theme);
 }
 
 function * themeSaga() {
     yield takeLatest(SET_THEME, setTheme);
-    yield takeLatest(TOGGLE_THEME, updateLocalStorage);
 }
 
 export default themeSaga;
