@@ -10,7 +10,7 @@ const Form = ({onSubmit, onChange, fieldValue}) => (
             type="text" 
             value={fieldValue} 
             onChange={onChange}
-            placeholder="City Name in UK"
+            placeholder="Any city in UK and hit return"
         />
             
     </form>

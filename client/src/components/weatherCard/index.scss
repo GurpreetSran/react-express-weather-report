@@ -9,14 +9,20 @@
     transition: all .2s ease-in-out;
     box-shadow: 2px 3px 5px #888888;
 
-        &:hover {
-            transform: scale(1.02);
-        }
-
-    .city {
-        font-size: 25px;
-        text-transform: uppercase;
+    &:hover {
+        transform: scale(1.02);
     }
+
+    .description {
+        flex-basis: 20%;
+        
+        .city {
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+    }
+
+    
     .days {
         display: flex;
         font-size: 15px;
