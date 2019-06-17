@@ -56,7 +56,8 @@ const App = () => {
             />
             <div className="appDescription">
               <p>Enter any city name in UK and get weather status. </p>
-              <p>Current status with next five days forecast is displayed.</p>
+              <p>Current status with next five day forecast is displayed.</p>
+              <p className="note">* The temperature unit is in celsius.</p>
             </div>
           </div>
         </div>
