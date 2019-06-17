@@ -4,7 +4,7 @@ import './index.scss';
 
 const WeatherCard = (props) => {
     const {nextFiveDays, name, current } = props; 
-    const description = current[0].description;
+    const description = current && current[0].description;
 
     // filter out bad data
     const filteredData = nextFiveDays.filter(day => day.date);
