@@ -1,15 +1,11 @@
+import { UPDATE_THEME } from '../actions/types';
+
 const initialState = {
     current: 'day'
 }
-const theme = (state = initialState, action) => {
+const theme = (state = initialState, action = {}) => {
     switch(action.type) {
-        case 'TOGGLE_THEME': {
-            return {
-                ...state,
-                current: state.current === 'day' ? 'night' : 'day',
-            }
-        }
-        case 'UPDATE_THEME': {
+        case UPDATE_THEME: {
             return {
                 ...state,
                 current: action.theme,

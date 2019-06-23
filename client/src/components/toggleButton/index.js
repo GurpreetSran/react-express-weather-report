@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './index.scss';
 
 const ToggleButton = ({isChecked, onChange, label}) => {
@@ -11,7 +13,7 @@ const ToggleButton = ({isChecked, onChange, label}) => {
     }
     
     return(
-        <div className="toggleButton">
+        <div className="toggleButton" data-test="toggleButton">
             <label className="switch">
                 <input type="checkbox" 
                     checked={checked} 
@@ -23,5 +25,11 @@ const ToggleButton = ({isChecked, onChange, label}) => {
         </div>
     )
 }
+
+ToggleButton.prototype = {
+    isChecked: PropTypes.bool,
+    onChange: PropTypes.func,
+    label: PropTypes.string
+};
 
 export default ToggleButton;
