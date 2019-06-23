@@ -2,9 +2,9 @@ import { takeLatest, put, select } from 'redux-saga/effects';
 import { SET_THEME } from '../actions/types';
 import { updateTheme } from '../actions/index';
 
-const defaultTheme = (state) => state.theme.current;
+export const defaultTheme = (state) => state.theme.current;
 
-function * setTheme(action) {
+export function * setTheme(action = {}) {
     const currentThemeFromState = yield select(defaultTheme);
     
     let theme;
