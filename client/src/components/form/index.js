@@ -5,8 +5,10 @@ const Form = ({onSubmit, onChange, fieldValue}) => (
     <form 
         onSubmit={onSubmit}
         className="formElement"
+        data-test="formComponent"
     > 
         <input 
+            data-test="inputField"
             type="text" 
             value={fieldValue} 
             onChange={onChange}
