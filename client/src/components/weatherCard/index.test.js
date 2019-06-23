@@ -2,6 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import WeatherCard from './index';
+import { findByTestAtrr } from '../../../utils/testUtils';
+
+const setUp = (props ={}) => {
+   const wrapper = shallow(<WeatherCard {...props} />);
+   return wrapper;
+}
 
 const props = [  
     {  
@@ -46,10 +52,20 @@ const props = [
     }
  ];
 
-
 describe('WeatherCard', () => {
-    it('should render with data', () => {
-        const wrapper = shallow(<WeatherCard {...props[0]} />);
-        expect(wrapper.find('div').first().hasClass('weatherCard')).toEqual(true);
-    });
+   describe('with props', () => {
+      it('should render', () => {
+         const component  = setUp({...props[0]});
+         const weatherCard = findByTestAtrr(component, 'weatherCard'); 
+         expect(weatherCard.length).toBe(1);
+     });
+   });
+
+   describe('without props', () => {
+      it('should not render', () => {
+         const component  = setUp();
+         const weatherCard = findByTestAtrr(component, 'weatherCard'); 
+         expect(weatherCard.length).toBe(0);
+      });
+   });
 });

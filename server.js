@@ -24,8 +24,8 @@ app.post('/api/weather', (req, res) => {
 
   // We are making two concurrent calls here to combine data together 
   axios.all([getNextFiveDays(), getCurrentData()])
-    .then(axios.spread(function (result, currentWeather) {
-      res.json(mapRequiredProps(result, currentWeather));
+    .then(axios.spread(function (nextFiveDaysWeather, currentWeather) {
+      res.json(mapRequiredProps(nextFiveDaysWeather, currentWeather));
     }))
     .catch(error => res.status(500).send(error));
 });

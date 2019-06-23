@@ -23,7 +23,7 @@ describe('Form', () => {
     expect(form.length).toBe(1);
   });
 
-  it('should render input', () => {
+  it('should contain input', () => {
     const inputElement = findByTestAtrr(component, 'inputField'); 
     expect(inputElement.length).toBe(1);
   });

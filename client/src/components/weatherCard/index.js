@@ -6,11 +6,17 @@ const WeatherCard = (props) => {
     const {nextFiveDays, name, current } = props; 
     const description = current && current[0].description;
 
+    if(!nextFiveDays) {
+        return null;
+    }
+
     // filter out bad data
     const filteredData = nextFiveDays.filter(day => day.date);
 
     return (
-        <div className="weatherCard">
+        <div className="weatherCard" 
+            data-test="weatherCard"
+        >
             <div className="description">
                 <div>Currently in:</div>
                 <div className="city">{name}</div>
