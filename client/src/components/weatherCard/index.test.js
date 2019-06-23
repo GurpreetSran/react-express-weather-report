@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import WeatherCard from './index';
-import { findByTestAtrr } from '../../../utils/testUtils';
+import { findByTestAtrr, checkProps } from '../../../utils/testUtils';
 
 const setUp = (props ={}) => {
    const wrapper = shallow(<WeatherCard {...props} />);
@@ -66,6 +66,28 @@ describe('WeatherCard', () => {
          const component  = setUp();
          const weatherCard = findByTestAtrr(component, 'weatherCard'); 
          expect(weatherCard.length).toBe(0);
+      });
+   });
+
+   describe('Prop types', () => {
+      
+      it('should not throw a warning', () => {
+         
+         const exptectedProps = {
+
+            nextFiveDays: [{
+                     date: 'Mon',
+                     tempMax: 12,
+                     tempMin: 5,
+                  }],
+            name: 'London',
+            current: [{
+               description: 'cloudy'
+            }]
+         };
+
+         const propsErr = checkProps(WeatherCard, exptectedProps);
+         expect(propsErr).toBeUndefined();
       });
    });
 });

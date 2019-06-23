@@ -1,5 +1,7 @@
 import * as React from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
+
 import './index.scss';
 
 const WeatherCard = (props) => {
@@ -42,5 +44,17 @@ const WeatherCard = (props) => {
         </div>
     );
 } 
+
+WeatherCard.propTypes = {
+    nextFiveDays: PropTypes.arrayOf(PropTypes.shape({
+        date: PropTypes.string,
+        tempMax: PropTypes.number,
+        tempMin: PropTypes.number,
+    })),
+    name: PropTypes.string, 
+    current: PropTypes.arrayOf(PropTypes.shape({
+        description: PropTypes.string
+    }))
+};
 
 export default WeatherCard;
