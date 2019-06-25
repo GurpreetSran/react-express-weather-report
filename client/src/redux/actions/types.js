@@ -5,3 +5,6 @@ export const UPDATE_THEME = 'UPDATE_THEME';
 //weather types
 export const ADD_CITY = 'ADD_CITY';
 export const FETCH_CITY_DATA = 'FETCH_CITY_DATA'; 
+
+//error
+export const ERROR = 'ERROR';

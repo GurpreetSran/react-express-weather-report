@@ -3,7 +3,7 @@ import {  put, select } from 'redux-saga/effects';
 import { updateTheme } from '../actions/index';
 
 describe('theme saga', () => {
-    it('should retutn correct state', () => {
+    it('should return correct state', () => {
         const state = {
             theme: {
                 current: 'day'

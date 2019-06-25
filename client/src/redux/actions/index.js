@@ -30,3 +30,7 @@ export const fetchCityData = (payload) => ({
     type: FETCH_CITY_DATA,
     payload
 });
+
+export const error = (error) => ({
+    error
+});
