@@ -46,3 +46,12 @@ No checks for duplicate city names.
 ![Screenshot](mobile-dark.png)
 ![Screenshot](desktop-light.png)
 ![Screenshot](mobile-light.png)
+
+
+
+
+todo:  
+    Style errors
+    Test for server 
+    improve coverage
+    UI Loader 
