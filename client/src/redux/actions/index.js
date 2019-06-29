@@ -2,7 +2,9 @@ import {
     SET_THEME, 
     UPDATE_THEME,
     ADD_CITY,
-    FETCH_CITY_DATA
+    FETCH_CITY_DATA,
+    ERRORS,
+    CLEAR_ERRORS
 } from './types';
 
 
@@ -31,6 +33,11 @@ export const fetchCityData = (payload) => ({
     payload
 });
 
-export const error = (error) => ({
-    error
+export const errors = (errors) => ({
+    type: ERRORS,
+    errors 
+});
+
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
 });

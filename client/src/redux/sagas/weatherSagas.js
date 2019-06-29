@@ -1,7 +1,11 @@
-import { takeLatest, put, call } from 'redux-saga/effects';
-import { fetchCityData, error } from '../actions';
-import {ADD_CITY} from '../actions/types';
+import { takeLatest, put, call, delay, select } from 'redux-saga/effects';
 import axios from 'axios';
+
+import { fetchCityData, errors, clearErrors } from '../actions';
+import {ADD_CITY} from '../actions/types';
+import { isDuplicateCity } from '../selectors';
+
+const DISPLAY_ERROR_TIME = 5000;
 
 export function getWeather(city = 'London') {
     return axios.post('/api/weather', {
@@ -10,13 +14,23 @@ export function getWeather(city = 'London') {
 }
 
 export function * addNewCity({city}) {
+    let weatherData;
     try {
-        const weatherData = yield call(getWeather, city);
-        yield put(fetchCityData((weatherData && weatherData.data) || {}));
+        weatherData = yield call(getWeather, city);
     } catch(err) {
-        yield put(error(err));
-        console.log(err);
-        // todo: display to user 
+        yield put(errors(['Invalid Location']));
+        yield delay(DISPLAY_ERROR_TIME);
+        yield put(clearErrors());
+    }
+
+    const isDuplicateLocation = yield select(isDuplicateCity, city);
+    
+    if(!isDuplicateLocation) {
+        yield put(fetchCityData((weatherData && weatherData.data) || {}));
+    } else {
+        yield put(errors(['Duplicate Location']));
+        yield delay(DISPLAY_ERROR_TIME);
+        yield put(clearErrors());
     }
 };
 

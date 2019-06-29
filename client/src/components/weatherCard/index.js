@@ -13,7 +13,7 @@ const WeatherCard = (props) => {
     }
 
     // filter out bad data
-    const filteredData = nextFiveDays.filter(day => day.date);
+    const filteredData = nextFiveDays.filter(day => day.day);
 
     return (
         <div className="weatherCard" 
@@ -28,7 +28,7 @@ const WeatherCard = (props) => {
                 {
                     filteredData.map( day => 
                         <div className="eachDay" key={uuid()} >
-                            <span className="dayName">{day.date}</span>
+                            <span className="dayName">{day.day}</span>
                             <div>
                                 <span>Max: </span>
                                 <span>{Math.round(day.tempMax)}</span>

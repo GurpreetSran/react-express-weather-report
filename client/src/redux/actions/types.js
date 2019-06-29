@@ -7,4 +7,5 @@ export const ADD_CITY = 'ADD_CITY';
 export const FETCH_CITY_DATA = 'FETCH_CITY_DATA'; 
 
 //error
-export const ERROR = 'ERROR';
+export const ERRORS = 'ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

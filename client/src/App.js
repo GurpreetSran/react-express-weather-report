@@ -2,8 +2,9 @@ import * as React from 'react';
 import WeatherCard from './components/weatherCard/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { setTheme, addCity } from './redux/actions';
-import ToggleButton from './components/toggleButton/index';
-import Form from './components/form/index';
+import ToggleButton from './components/toggleButton';
+import Form from './components/form';
+import Errors from './components/errors';
 import uuid from 'uuid';
 
 import './App.scss';
@@ -11,6 +12,8 @@ import './App.scss';
 const App = () => {
   const theme = useSelector(state => state.theme.current);
   const weather = useSelector(state => state.weather.weather);
+  const errors = useSelector(state => state.errors);
+  
   const [cityName, setCityName ] = React.useState('');
   const dispatch = useDispatch();
 
@@ -44,6 +47,9 @@ const App = () => {
             onChange={(e) => setCityName(e.target.value)} 
             fieldValue={cityName} 
           />
+            {
+              errors.length !== 0 && <Errors errors={errors} />
+            }
             {
                 weather.map(city => <WeatherCard key={uuid()} {...city} />)
             }
