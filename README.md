@@ -38,10 +38,6 @@ $ npm test
 https://express-react-weather.herokuapp.com/
 
 
-# Limitations
-There is no error handling, search will not work if the city name is invalid.
-No checks for duplicate city names.
-
 ![Screenshot](desktop-dark.png)
 ![Screenshot](mobile-dark.png)
 ![Screenshot](desktop-light.png)
