@@ -14,21 +14,19 @@ export function getWeather(city = 'London') {
 }
 
 export function * addNewCity({city}) {
-    let weatherData;
     try {
-        weatherData = yield call(getWeather, city);
+        const weatherData = yield call(getWeather, city);
+        const isDuplicateLocation = yield select(isDuplicateCity, city);
+    
+        if(!isDuplicateLocation) {
+            yield put(fetchCityData((weatherData && weatherData.data) || {}));
+        } else {
+            yield put(errors(['Duplicate Location']));
+            yield delay(DISPLAY_ERROR_TIME);
+            yield put(clearErrors());
+        }
     } catch(err) {
         yield put(errors(['Invalid Location']));
-        yield delay(DISPLAY_ERROR_TIME);
-        yield put(clearErrors());
-    }
-
-    const isDuplicateLocation = yield select(isDuplicateCity, city);
-    
-    if(!isDuplicateLocation) {
-        yield put(fetchCityData((weatherData && weatherData.data) || {}));
-    } else {
-        yield put(errors(['Duplicate Location']));
         yield delay(DISPLAY_ERROR_TIME);
         yield put(clearErrors());
     }

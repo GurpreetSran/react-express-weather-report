@@ -1,0 +1,16 @@
+.errors {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    margin: 0 10px;
+    flex-direction: column;
+
+    > span {
+        border-radius: 3px;
+        margin: 5px;
+        padding: 10px;
+        background-color: red;
+    }
+}
+

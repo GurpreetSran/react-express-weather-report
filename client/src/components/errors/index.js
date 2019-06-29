@@ -1,8 +1,9 @@
 import React from 'react';
 import uuid from 'uuid';
+import './index.scss';
 
 const Errors = ({errors}) => (
-    <div className="erros"> 
+    <div className="errors"> 
         {
             errors.map(error => 
                 <span key={uuid()}>{error}</span>
