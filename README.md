@@ -51,9 +51,4 @@ https://express-react-weather.herokuapp.com/
 ![Screenshot](desktop-dark.png)
 ![Screenshot](mobile-dark.png)
 ![Screenshot](desktop-light.png)
-![Screenshot](mobile-light.png)
-
-todo:  
-    Test for server 
-    Improve coverage 
-    UI Loader 
+![Screenshot](mobile-light.png)    
