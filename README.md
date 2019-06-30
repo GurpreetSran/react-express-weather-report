@@ -1,9 +1,9 @@
 # How to run locally 
-React express based application for generating weather reports.
+React(client) express(server/node) based application for generating weather reports (open weather API).
 
-This application is based on create react app. Express server has been added to massage the data and hide API keys. This should help to keep Front End application clean. 
+Application is based on create react app. Express server has been added to massage the data and hide API keys. This should help to keep Front End application clean and separate areas of concerns. Hence making it modular which should help with maintainability and scalability.
 
-Latest react hooks has been used instead tradition classes.
+React hooks has been used instead tradition classes.
 
 Dev mode commands to get you started 
 ```sh
@@ -21,17 +21,21 @@ Note this will run two applications together, webpack dev server and node.js ser
 
 # Functionality
 
-This app gets weather information for next five days of given city in UK.
+App gets weather information for next five days of given city in UK.
 User can also change theme (dark/light) which is stored in localstorage.
 
 London is displayed by default. User can enter name of any city in UK and press enter to get weather details.
 
+Validation: 
+    Duplicate location
+    Invalid location
+
 # Unit tests
-Application uses jest and enzyme in order to unit test code. Some basic tests have been added. 
+Application uses jest and enzyme in order to unit test client code. 
 
 ```sh
 $ cd client 
-$ npm test
+$ npm test / coverage 
 
 ```
 # Live demo
@@ -43,11 +47,7 @@ https://express-react-weather.herokuapp.com/
 ![Screenshot](desktop-light.png)
 ![Screenshot](mobile-light.png)
 
-
-
-
 todo:  
-    Style errors
     Test for server 
-    improve coverage
+    Improve coverage 
     UI Loader 
