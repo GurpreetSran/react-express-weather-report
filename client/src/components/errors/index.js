@@ -3,10 +3,18 @@ import uuid from 'uuid';
 import './index.scss';
 
 const Errors = ({errors}) => (
-    <div className="errors"> 
+    <div 
+        className="errors"
+        data-test="errorsComponent"
+    > 
         {
             errors.map(error => 
-                <span key={uuid()}>{error}</span>
+                <span 
+                    data-test="error"
+                    key={uuid()
+                }>
+                    {error}
+                </span>
             )
         }
     </div>

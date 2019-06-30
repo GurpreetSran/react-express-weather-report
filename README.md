@@ -35,9 +35,15 @@ Application uses jest and enzyme in order to unit test client code.
 
 ```sh
 $ cd client 
-$ npm test / coverage 
-
+$ npm test
 ```
+
+Coverage report
+```sh
+$ cd client 
+$ npm run coverage
+```
+
 # Live demo
 https://express-react-weather.herokuapp.com/
 
