@@ -1,6 +1,9 @@
-import { isDuplicateCity } from './index';
+import { isDuplicateCity, getDefaultTheme } from './index';
 
 const state = {
+    theme: {
+        current: 'night'
+    },
     weather: {
         weather: [
             {
@@ -21,6 +24,12 @@ describe('selectors', () => {
 
         it('should return false', () => {
             expect(isDuplicateCity(state, 'Folkestone')).toBe(false);
+        });
+    });
+
+    describe('getDefaultTheme', () => {
+        it('should return "night"', () => {
+            expect(getDefaultTheme(state)).toBe('night');
         });
     });
 });

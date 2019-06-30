@@ -23,4 +23,17 @@ describe('Weather Saga', () => {
         expect(generator.throw(errMessage).value)
             .toEqual(put(errors([errMessage])));
     });
+
+    // it('should detect duplicate', () => {
+    //     const payload = {
+    //         city: 'London'
+    //     };
+
+    //     const errMessage = 'Duplicate Location';
+
+    //     const generator = addNewCity(payload);
+    //     expect(generator.next().value).toEqual(call(getWeather, payload.city));
+    //     expect(generator.next().value).toEqual(select(isDuplicateCity, payload.city));
+    //     console.log(generator.next().value);
+    // });
 });
