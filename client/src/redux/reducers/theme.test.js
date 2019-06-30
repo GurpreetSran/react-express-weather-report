@@ -1,17 +1,17 @@
-import themeRecucer from './theme';
+import themeReducer from './theme';
 
 import { updateTheme } from '../actions';
 
 
 describe('themeReducer', () => {
     it('should return default state', () => {
-        expect(themeRecucer()).toEqual({
+        expect(themeReducer()).toEqual({
             current: 'day'
         });
     });
 
     it('should update theme', () => {
-        expect(themeRecucer(undefined, updateTheme('night'))).toEqual({
+        expect(themeReducer(undefined, updateTheme('night'))).toEqual({
             current: 'night'
         });
     });

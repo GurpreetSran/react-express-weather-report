@@ -1,9 +1,6 @@
 import { ERRORS, CLEAR_ERRORS } from '../actions/types';
 
-const initialState = []
-
-
-const errors = (state=initialState, action ={}) => {
+const errors = (state=[], action ={}) => {
     switch(action.type) {
         
         case ERRORS: {
